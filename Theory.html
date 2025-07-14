@@ -4,6 +4,353 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>This is what TypeScript is</title>
+        <link rel="stylesheet" href="theory.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
     </head>
-    <body></body>
+    <body>
+        <div class="main-wrapper">
+            <header>
+                <h1 class="header-title">TYPESCRIPT</h1>
+            </header>
+
+            <section class="section">
+                <h2 class="section__title">1. What is TypeScript ?</h2>
+                <p class="section__description">
+                    TypeScript is a syntactic superset of JavaScript which adds
+                    static typing.
+                </p>
+                <p class="section__description">
+                    This basically means that TypeScript adds syntax on top of
+                    JavaScript, allowing developers to add types.
+                </p>
+                <strong class="section__conclusion">
+                    &rarr; TypeScript allows developers to add TYPES.
+                </strong>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">
+                    2. Why should we use TypeScript ?
+                </h2>
+                <p class="section__description">
+                    TypeScript provides several benefits over JavaScript,
+                    including:
+                </p>
+                <ul class="section__list">
+                    <li class="list__item">
+                        Static Typing: TypeScript allows developers to specify
+                        types, which can help catch errors early in the
+                        development process.
+                    </li>
+                    <li class="list__item">
+                        Improved Tooling: TypeScript offers better
+                        autocompletion, navigation, and refactoring capabilities
+                        in IDEs.
+                    </li>
+                    <li class="list__item">
+                        Enhanced Readability: Type annotations can make the code
+                        more self-documenting and easier to understand.
+                    </li>
+                </ul>
+                <strong class="section__conclusion">
+                    TypeScript uses compile time type checking. Which means it
+                    checks if the specified types match before running the code,
+                    not while running the code. This helps in catching errors
+                    early in the development process, reducing bugs and
+                    improving code quality.
+                </strong>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">3. How to use TypeScript ?</h2>
+                <strong class="section__conclusion">
+                    A common way to use TypeScript is to use the official
+                    TypeScript compiler, which transpiles TypeScript code into
+                    JavaScript.
+                </strong>
+                <p class="section__extended-description">
+                    Some popular code editors, such as Visual Studio Code, have
+                    built-in TypeScript support and can show errors as you write
+                    code!
+                </p>
+                <p class="section__extended-description">
+                    Extension of VSC that developers can use to program with
+                    TypeScript: ESLint, Prettier or Prettier ESLint, Code Spell
+                    Checker, Path Intellisense, Auto Rename Tag, Better
+                    comments, TypeScript importer, TypeScript toolbox, DotENV,
+                    Quokka.js
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">4. TypeScript compiler</h2>
+                <p class="section__description">
+                    TypeScript being converted into JavaScript means it runs
+                    anywhere that JavaScript runs!
+                </p>
+                <h3 class="section__subtitle">Steps to install the compiler</h3>
+                <ul class="section__list">
+                    <li class="list__item">1. Install NodeJs</li>
+                    <li class="list__item">
+                        2. Install TypeScript
+                        <ul class="sub-list">
+                            <li class="sub-list__item">
+                                Install TypeScript Globally (Recommended for
+                                learning and general use)
+                                <pre><code class="code--block">npm install -g typescript</code></pre>
+                            </li>
+                            <li class="sub-list__item">
+                                Install TypeScript for the project
+                                <ul class="sub-list">
+                                    <li class="sub-list__item">
+                                        Create a project folder and navigate to
+                                        it using the terminal.
+                                        <pre><code class="code--block">mkdir my-project
+cd my-project</code></pre>
+                                    </li>
+                                    <li class="sub-list__item">
+                                        Initialize a new Node.js project
+                                        <pre><code class="code--block">npm init -y</code></pre>
+                                    </li>
+                                    <li class="sub-list__item">
+                                        Install TypeScript as a development
+                                        dependency
+                                        <pre><code class="code--block">npm install typescript --save-dev</code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list__item">
+                        3. Check TypeScript version
+                        <pre><code class="code--block">tsc -v
+npx tsc</code></pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">5. Configuring the compiler</h2>
+                <p class="section__description">
+                    By default the TypeScript compiler will print a help message
+                    when run in an empty project.
+                </p>
+                <p class="section__description">
+                    The compiler can be configured using a tsconfig.json file.
+                </p>
+                <p class="section__description">
+                    You can have TypeScript create tsconfig.json with the
+                    recommended settings with:
+                </p>
+                <ul class="section__list">
+                    <li class="list__item">
+                        Open terminal and move to your project:
+                        <pre><code class="code--block">cd your-project</code></pre>
+                    </li>
+                    <li class="list__item">
+                        Run the command to create tsconfig.json:
+                        <pre><code class="code--block">npx tsc --init</code></pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">6. TypeScript Simple Types</h2>
+                <p class="section__description">
+                    There are three main primitives in JavaScript and
+                    TypeScript.
+                </p>
+                <ul class="section__list">
+                    <li class="list__item">
+                        boolean - true or false values
+                        <br />
+                        <code class="code--inline"
+                            >let isDone: boolean = false;</code
+                        >
+                    </li>
+                    <li class="list__item">
+                        number - all numbers, including integers and floats
+                        <br />
+                        <code class="code--inline">let age: number = 25;</code>
+                    </li>
+                    <li class="list__item">
+                        string - text values, enclosed in single or double
+                        quotes
+                        <br />
+                        <code class="code--inline"
+                            >let name: string = "John";</code
+                        >
+                    </li>
+                </ul>
+                <p class="section__description">
+                    There are also some types like
+                </p>
+                <ul class="section__list">
+                    <li class="list__item">
+                        null - represents the intentional absence of any object
+                        value
+                        <br />
+                        <code class="code--inline"
+                            >let emptyValue: null = null;</code
+                        >
+                    </li>
+                    <li class="list__item">
+                        undefined - represents a variable that has been declared
+                        but not assigned a value
+                        <br />
+                        <code class="code--inline"
+                            >let uninitializedValue: undefined;</code
+                        >
+                    </li>
+                </ul>
+                <p class="section__description">
+                    There are also 2 less common primitives used in later
+                    versions of Javascript and TypeScript.
+                </p>
+                <ul class="section__list">
+                    <li class="list__item">
+                        bigint - represents integers with arbitrary precision
+                        <br />
+                        <code class="code--inline"
+                            >let bigNumber: bigint =
+                            1234567890123456789012345678901234567890n;</code
+                        >
+                    </li>
+                    <li class="list__item">
+                        symbol - represents a unique and immutable value, often
+                        used as object property keys
+                        <br />
+                        <code class="code--inline"
+                            >let uniqueSymbol: symbol =
+                            Symbol("description");</code
+                        >
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">7. Type Assignment</h2>
+                <p class="section__description">
+                    When creating a variable, there are two main ways TypeScript
+                    assigns a type:
+                </p>
+                <ul class="section__list">
+                    <li class="list__item">
+                        <p class="list__item-title">
+                            Explicit: writing out the type: (Recommended)
+                        </p>
+                        <code class="code--inline"
+                            >Ex: let age: number = 25;</code
+                        >
+                        <br />
+                        <strong class="section__conclusion">
+                            &rarr; Explicit type assignment are easier to read
+                            and more intentional.
+                        </strong>
+                    </li>
+                    <li class="list__item">
+                        <p class="list__item-title">
+                            Implicit: TypeScript will "guess" the type, based on
+                            the assigned value:
+                        </p>
+                        <code class="code--inline">Ex: let age = 25;</code>
+                        <br />
+                        <strong class="section__conclusion">
+                            &rarr;Having TypeScript "guess" the type of a value
+                            is called infer.
+                        </strong>
+                        <br />
+                        <strong class="section__conclusion">
+                            &rarr; Implicit assignment forces TypeScript to
+                            infer the value. Implicit type assignment are
+                            shorter, faster to type, and often used when
+                            developing and testing.
+                        </strong>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">8. Error In Type Assignment</h2>
+                <p class="section__description">
+                    TypeScript will throw an error if data types do not match.
+                </p>
+
+                <h3 class="section__subtitle">Ex: (Inferred Type)</h3>
+                <div class="code-example-block">
+                    <pre><code class="language-typescript">let firstName = "Dylan"; // inferred to type string
+firstName = 33; // attempts to re-assign the value to a different type</code></pre>
+                </div>
+
+                <p class="section__description">
+                    Implicit type assignment would have made firstName less
+                    noticeable as a string, but both will throw an error
+                </p>
+
+                <h3 class="section__subtitle">Ex: (Explicit Type)</h3>
+                <div class="code-example-block">
+                    <pre><code class="language-typescript">let firstName: string = "Dylan"; // inferred to type string
+firstName = 33; // attempts to re-assign the value to a different type</code></pre>
+                </div>
+
+                <p class="section__conclusion">
+                    &rarr; JavaScript will not throw an error for mismatched
+                    types.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">9. Unable to Infer</h2>
+                <p class="section__description">
+                    TypeScript may not always properly infer what the type of a
+                    variable may be. In such cases, it will set the type to any
+                    which disables type checking.
+                </p>
+                <h3 class="section__subtitle">Ex:</h3>
+                <div class="code-example-block">
+                    <pre><code class="language-typescript">// Implicit any as JSON.parse doesn't know what type of data it
+// returns so it can be "any" thing...
+const json = JSON.parse("55");
+
+// Most expect json to be an object, but it can be a string or a
+// number like this example
+console.log(typeof json); // (number)</code></pre>
+                </div>
+                <p class="section__description">
+                    This behavior can be disabled by enabling
+                    <code class="code--inline">noImplicitAny</code> as an option
+                    in a TypeScript's project
+                    <code class="code--inline">tsconfig.json</code>. That is a
+                    JSON config file for customizing how some of TypeScript
+                    behaves.
+                </p>
+                <p class="section__description">
+                    <strong class="section__note">! Note:</strong> you may see
+                    primitive types capitalized like
+                    <code class="code--inline">Boolean</code>.
+                </p>
+                <strong class="section__conclusion">
+                    <code class="code--inline">boolean !== Boolean</code>
+                </strong>
+                <p class="section__description">
+                    For this tutorial just know to use the lower-cased values,
+                    the upper-case ones are for very specific circumstances.
+                </p>
+            </section>
+
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-summary"></div>
+                    <div class="footer-contact-information"></div>
+                </div>
+            </footer>
+        </div>
+    </body>
 </html>

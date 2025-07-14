@@ -1,0 +1,314 @@
+/* Body and Main Container for Centering and Max-Width */
+body {
+    font-family: Arial, sans-serif; /* A clear, readable font */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Default text color */
+    background-color: #f9f9f9; /* A light, soft background */
+    margin: 0; /* Remove default body margin */
+    padding: 20px; /* Add some padding around the entire content */
+    display: flex; /* Use flexbox to center main content */
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+}
+
+/* Optional: A main wrapper if you want to apply max-width to everything inside body */
+/* You might wrap your <header> and <section> tags inside a <main> tag or a <div> */
+/* Example HTML structure:
+    <body>
+        <div class="main-wrapper">
+            <header>...</header>
+            <section>...</section>
+            ...
+        </div>
+    </body>
+*/
+.main-wrapper {
+    max-width: 900px; /* Limit content width */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    background-color: #fff; /* White background for the content area */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 30px 40px; /* More padding inside the main content area */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Header */
+.header-title {
+    font-size: 2.8em; /* Slightly larger for prominence */
+    color: #2c3e50; /* A darker, more professional blue-gray */
+    margin-bottom: 25px; /* More space below the header */
+    text-align: center;
+    padding-bottom: 10px; /* Padding for visual separation */
+    border-bottom: 2px solid #007bff; /* A distinct underline */
+    letter-spacing: 1.5px; /* Slight letter spacing for style */
+}
+
+/* General section styling */
+.section {
+    margin-bottom: 30px; /* Reduced margin to make sections closer */
+    padding: 15px 0; /* Adjusted padding within sections, relying on main-wrapper's horizontal padding */
+    border-bottom: 1px dashed #e0e0e0; /* Changed to dashed for a softer separator */
+}
+
+.section:last-of-type {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0; /* No margin for the last section */
+}
+
+/* Titles and descriptions */
+.section__title {
+    font-size: 2.2em; /* Slightly larger */
+    color: #34495e; /* Darker blue-gray */
+    margin-bottom: 18px; /* Adjusted margin */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f0f0f0; /* Subtle underline for titles */
+}
+
+.section__subtitle {
+    font-size: 1.6em; /* Slightly larger */
+    color: #4a69bd; /* A subtle blue for subtitles */
+    margin-top: 30px; /* More space above subtitles */
+    margin-bottom: 12px;
+}
+
+.section__description {
+    font-size: 1.05em; /* Slightly adjusted font size */
+    line-height: 1.7; /* Increased line height for better readability */
+    margin-bottom: 12px; /* Adjusted margin */
+}
+
+.section__extended-description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.section__conclusion {
+    display: block;
+    font-weight: bold;
+    color: #0056b3; /* Darker blue for stronger emphasis */
+    background-color: #eaf6ff; /* Light blue background for conclusions */
+    padding: 10px 15px;
+    border-left: 5px solid #007bff; /* Blue left border for visual cue */
+    border-radius: 4px;
+    margin-top: 20px; /* More space above */
+    margin-bottom: 20px; /* More space below */
+}
+
+.section__note {
+    font-weight: bold;
+    color: #d35400; /* A slightly softer orange/red for notes */
+    background-color: #fff3cd; /* Light yellow background */
+    padding: 8px 12px;
+    border-left: 4px solid #f39c12; /* Orange left border */
+    border-radius: 4px;
+    display: inline-block; /* Allows it to wrap text */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Lists */
+.section__list {
+    list-style: disc;
+    margin-left: 30px; /* Slightly more indentation */
+    margin-bottom: 20px; /* More space below lists */
+}
+
+.list__item {
+    margin-bottom: 10px; /* More space between list items */
+    line-height: 1.6;
+}
+
+.list__item-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50; /* Match title color */
+}
+
+/* Sub-lists */
+.sub-list {
+    list-style: circle; /* Different bullet for sub-lists */
+    margin-left: 25px; /* Consistent indentation */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.sub-list__item {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+/* Code examples */
+.code-example-block {
+    background-color: #282c34; /* Darker background for code blocks (common in IDEs) */
+    border: 1px solid #444;
+    border-radius: 8px; /* Slightly more rounded corners */
+    padding: 18px; /* More padding */
+    margin: 25px 0; /* More vertical space */
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+.code--block {
+    font-family: "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono",
+        Menlo, Courier, monospace; /* Consider a ligatures-enabled font like Fira Code */
+    font-size: 0.9em; /* Slightly smaller for density */
+    color: #abb2bf; /* Light gray for code text */
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word; /* Ensure long lines break */
+}
+
+.code--inline {
+    font-family: "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono",
+        Menlo, Courier, monospace;
+    background-color: #e0e0e0; /* Light gray background */
+    padding: 3px 7px; /* Slightly more padding */
+    border-radius: 4px; /* Slightly more rounded */
+    font-size: 0.88em; /* Slightly smaller */
+    color: #c7254e; /* Keep strong red for inline code */
+    white-space: nowrap; /* Prevent breaking inline code */
+}
+
+/* Optional: Styling for footer */
+footer {
+    width: 100%; /* Ensure footer spans full width of its parent (.main-wrapper or body) */
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+/* --- Media Queries cho Mobile --- */
+
+@media (max-width: 768px) {
+    /* Điều chỉnh cho máy tính bảng và các thiết bị nhỏ hơn */
+
+    body {
+        padding: 15px; /* Giảm padding tổng thể của body */
+    }
+
+    .main-wrapper {
+        max-width: 100%; /* Cho phép wrapper chiếm toàn bộ chiều rộng có sẵn */
+        padding: 20px 25px; /* Giảm padding bên trong wrapper */
+        box-shadow: none; /* Bỏ shadow để trông nhẹ nhàng hơn trên mobile */
+        border-radius: 0; /* Bỏ bo góc */
+    }
+
+    .header-title {
+        font-size: 2em; /* Giảm kích thước tiêu đề chính */
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+    }
+
+    .section__title {
+        font-size: 1.8em; /* Giảm kích thước tiêu đề phần */
+        margin-bottom: 15px;
+    }
+
+    .section__subtitle {
+        font-size: 1.3em; /* Giảm kích thước tiêu đề phụ */
+        margin-top: 20px;
+        margin-bottom: 8px;
+    }
+
+    .section__description,
+    .section__extended-description {
+        font-size: 1em; /* Giữ hoặc giảm nhẹ font chữ nội dung */
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .section__conclusion {
+        font-size: 0.95em; /* Giảm nhẹ font chữ cho kết luận */
+        padding: 8px 12px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .section__note {
+        font-size: 0.9em; /* Giảm nhẹ font chữ cho ghi chú */
+        padding: 6px 10px;
+    }
+
+    .section__list {
+        margin-left: 20px; /* Giảm lề danh sách */
+        margin-bottom: 15px;
+    }
+
+    .list__item {
+        margin-bottom: 8px; /* Giảm khoảng cách giữa các mục trong danh sách */
+        line-height: 1.5;
+    }
+
+    .sub-list {
+        margin-left: 15px; /* Giảm lề sub-list */
+    }
+
+    /* Điều chỉnh khối code để cuộn ngang nếu quá dài */
+    .code-example-block {
+        padding: 15px; /* Giảm padding khối code */
+        margin: 20px 0; /* Giảm margin khối code */
+        border-radius: 5px; /* Giảm bo góc */
+    }
+
+    .code--block {
+        font-size: 0.85em; /* Giảm font chữ code để hiển thị được nhiều hơn */
+        word-wrap: normal; /* Không tự động xuống dòng */
+        white-space: pre; /* Giữ nguyên dòng, cho phép cuộn ngang */
+    }
+
+    .code--inline {
+        font-size: 0.85em; /* Giảm font chữ code inline */
+        padding: 2px 4px;
+    }
+
+    footer {
+        margin-top: 30px; /* Giảm margin trên của footer */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Điều chỉnh thêm cho điện thoại di động nhỏ */
+
+    .main-wrapper {
+        padding: 15px 20px; /* Giảm padding hơn nữa */
+    }
+
+    .header-title {
+        font-size: 1.8em;
+    }
+
+    .section__title {
+        font-size: 1.6em;
+    }
+
+    .section__subtitle {
+        font-size: 1.2em;
+    }
+
+    .section__description,
+    .section__extended-description {
+        font-size: 0.95em;
+    }
+
+    .section__list {
+        margin-left: 15px;
+    }
+
+    .code-example-block {
+        padding: 10px;
+    }
+
+    .code--block {
+        font-size: 0.8em;
+    }
+}
