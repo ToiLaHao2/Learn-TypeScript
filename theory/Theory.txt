@@ -291,4 +291,61 @@ You can have TypeScript create tsconfig.json with the recommended settings with:
 
             Because of the structure we know our first value in our list will be a certain value type in this case a string and the second value a function.
 
+    - Named Tuples:
+
+        Named tuples allow us to provide context for our values at each index.
+
+            Ex: 
+
+                const graph: [x: number, y: number] = [55.2, 41.3];
+
+        -> Named tuples provide more context for what our index values represent.
+
+    - Destructuring Tuples:
+
+        Since tuples are arrays we can also destructure them.
+
+            Ex:
+
+                const graph: [number, number] = [55.2, 41.3];
+                const [x, y] = graph;
+
+13. TypeScript Object Types
+
+    TypeScript has a specific syntax for typing objects.
+
+        Ex:
+
+            const car: { type: string, model: string, year: number } = {
+                type: "Toyota",
+                model: "Corolla",
+                year: 2009
+            };
+    
+    -> Object types like this can also be written separately, and even be reused, look at interfaces for more details.
+
+    - Type Inference:
+
+        TypeScript can infer the types of properties based on their values.
+
+        Ex:
+
+            const car = {
+                type: "Toyota",
+            };
+            car.type = "Ford"; // no error
+            car.type = 2; // Error: Type 'number' is not assignable to type 'string'.
+    
+    - Optional Properties:
+
+        Optional properties are properties that don't have to be defined in the object definition.
+
+        Ex without an optional property:
+
+            const car: { type: string, mileage: number } = { // Error: Property 'mileage' is missing in type '{ type: string; }' but required in type '
+            { type: string; mileage: number; }'.
+                type: "Toyota",
+            };
+            car.mileage = 2000;
         
+        Ex with an optional property
